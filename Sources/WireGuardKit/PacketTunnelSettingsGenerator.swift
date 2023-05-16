@@ -87,7 +87,7 @@ class PacketTunnelSettingsGenerator {
             let dnsServerStrings = tunnelConfiguration.interface.dns.map { $0.stringRepresentation }
             let dnsSettings = NEDNSSettings(servers: dnsServerStrings)
             dnsSettings.searchDomains = tunnelConfiguration.interface.dnsSearch
-          
+
             if !tunnelConfiguration.interface.dns.isEmpty {
                 dnsSettings.matchDomainsNoSearch = true
                 if tunnelConfiguration.interface.dnsMatchDomains.isEmpty {
@@ -108,7 +108,7 @@ class PacketTunnelSettingsGenerator {
                     }
                 }
             }
-          
+
             networkSettings.dnsSettings = dnsSettings
         }
 
